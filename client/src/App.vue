@@ -3,17 +3,17 @@
     <div class="inner">
         <todo-header></todo-header>
         <div class="head-class">[한일]</div>
-        <todo-input v-on:addTodo="addTodo"></todo-input>
-        <todo-list v-bind:propsdata="todoItems" @removeTodo="removeTodo"></todo-list>
-        <todo-footer v-on:removeAll="clearAll"></todo-footer>
+        <todo-footer v-on:removeAll="clearAllYesterdayTodo"></todo-footer>
+        <todo-input v-on:addYesterdayTodo="addYesterdayTodo" :propsdata="'addYesterdayTodo'"></todo-input>
+        <todo-list v-bind:propsdata="yesterdayTodoItems" @removeTodo="removeTodo"></todo-list>
         <div class="head-class">[할일]</div>
-        <todo-input v-on:addTodo="addTodo"></todo-input>
+        <todo-input v-on:addTodayTodo="addTodayTodo" :propsdata="'addTodayTodo'"></todo-input>
         <todo-list v-bind:propsdata="todoItems" @removeTodo="removeTodo"></todo-list>
-        <todo-footer v-on:removeAll="clearAll"></todo-footer>
+        <todo-footer v-on:removeAll="clearAllTodayTodo"></todo-footer>
         <div class="head-class">[오늘의 생각]</div>
-        <todo-input v-on:addTodo="addTodo"></todo-input>
-        <todo-list v-bind:propsdata="todoItems" @removeTodo="removeTodo"></todo-list>
-        <todo-footer v-on:removeAll="clearAll"></todo-footer>
+        <todo-input v-on:addTodayThink="addTodayThink" :propsdata="'addTodayThink'"></todo-input>
+        <todo-list v-bind:propsdata="todayItems" @removeTodo="removeTodo"></todo-list>
+        <todo-footer v-on:removeAll="clearAllTodayThink"></todo-footer>
         <div class="saveContainer">
           <span class="saveBtn" @click="">Save</span>
         </div>
@@ -30,7 +30,9 @@ import TodoFooter from './components/TodoFooter.vue';
 export default {
     data() {
         return {
-            todoItems: []
+            yesterdayTodoItems:[],
+            todoItems: [],
+            todayItems: [],
         }
     },
     created() {
@@ -41,9 +43,17 @@ export default {
         }
     },
     methods: {
-        addTodo(todoItem) {
+        addYesterdayTodo(todoItem) {
+            localStorage.setItem(todoItem, todoItem);
+            this.yesterdayTodoItems.push(todoItem);
+        },
+        addTodayTodo(todoItem) {
             localStorage.setItem(todoItem, todoItem);
             this.todoItems.push(todoItem);
+        },
+        addTodayThink(todoItem) {
+            localStorage.setItem(todoItem, todoItem);
+            this.todayItems.push(todoItem);
         },
         clearAll() {
             localStorage.clear();

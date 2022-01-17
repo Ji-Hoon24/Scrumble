@@ -29,7 +29,7 @@ import Modal from './common/Modal.vue';
             addTodo() {
                 if(this.newTodoItem !== '') {
                     var value = this.newTodoItem && this.newTodoItem.trim();
-                    this.$emit('addTodo', value);
+                    this.$emit(this.propsdata, value);
                     this.clearInput();
                 } else {
                     this.showModal = !this.showModal;
