@@ -1,6 +1,5 @@
 package com.jh.scrumble.controller.posts;
 
-import com.jh.scrumble.domain.posts.PostsRepository;
 import com.jh.scrumble.domain.posts.dto.PostsSaveRequestDto;
 import com.jh.scrumble.domain.posts.dto.PostsUpdateRequestDto;
 import com.jh.scrumble.dto.PostsResponseDto;
