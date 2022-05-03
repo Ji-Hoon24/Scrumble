@@ -1,4 +1,4 @@
-package com.jh.scrumble.domain.posts;
+package com.jh.scrumble.domain.common;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

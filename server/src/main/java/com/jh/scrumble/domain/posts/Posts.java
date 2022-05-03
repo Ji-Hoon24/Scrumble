@@ -1,5 +1,6 @@
 package com.jh.scrumble.domain.posts;
 
+import com.jh.scrumble.domain.common.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
