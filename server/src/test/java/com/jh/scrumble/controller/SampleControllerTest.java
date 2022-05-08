@@ -39,4 +39,5 @@ public class SampleControllerTest {
             .andExpect(jsonPath("$.name", is(name)))
             .andExpect(jsonPath("$.amount", is(amount)));
     }
+
 }
