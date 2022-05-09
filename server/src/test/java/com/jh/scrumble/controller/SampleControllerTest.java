@@ -1,9 +1,14 @@
 package com.jh.scrumble.controller;
 
+import com.jh.scrumble.config.auth.SecurityConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -14,12 +19,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = SampleController.class)
+@WebMvcTest(controllers = SampleController.class, excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)})
 public class SampleControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
+    @WithMockUser(roles = "USER")
     @Test
     public void sample_return() throws Exception {
         String sample = "SAMPLE";
@@ -29,6 +35,7 @@ public class SampleControllerTest {
             .andExpect(content().string(sample));
     }
 
+    @WithMockUser(roles = "USER")
     @Test
     public void sample_dto_return() throws Exception {
         String name = "hello";
