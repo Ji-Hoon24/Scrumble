@@ -7,8 +7,7 @@ import kr.co.scrumble.service.SampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +23,8 @@ public class SampleController {
         @ApiResponse(code = 200, message = "API 정상 작동"),
         @ApiResponse(code = 500, message = "서버 에러")
     })
-    @RequestMapping(value="/sample", method={RequestMethod.GET})
+    @ResponseBody
+    @GetMapping("/sample")
     public Map<String, Object> sample() {
         System.out.println("Sample Controller..");
         sampleService.SampleService();

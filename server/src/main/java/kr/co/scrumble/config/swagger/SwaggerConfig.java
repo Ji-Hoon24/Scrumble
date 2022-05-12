@@ -1,4 +1,4 @@
-package kr.co.scrumble.config;
+package kr.co.scrumble.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
