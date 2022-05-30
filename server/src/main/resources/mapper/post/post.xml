@@ -111,4 +111,34 @@
         WHERE DETAIL_ID = #{detailId}
         AND   POST_ID = #{postId}
     </delete>
+
+    <select id="selectPostPage" parameterType="kr.co.scrumble.dto.request.PostRequestDto" resultType="postDto">
+        /* kr.co.scrumble.mapper.PostMapper.selectPostDetailList */
+        SELECT  POST_ID
+        ,       TITLE
+        ,       USER_NO
+        ,       POST_DT
+        ,       REG_ID
+        ,       REG_DT
+        ,       UDT_ID
+        ,       UDT_DT
+        FROM POST
+        ORDER BY REG_DT DESC
+        LIMIT 10 OFFSET (10 - (#{page} * 10))
+    </select>
+
+    <select id="selectPostDetailList" parameterType="postDto" resultType="postDetailDto">
+        /* kr.co.scrumble.mapper.PostMapper.selectPostDetailList */
+        SELECT  DETAIL_ID
+        ,       POST_ID
+        ,       CONTENTS
+        ,       COMPLETE_YN
+        ,       POST_CD
+        ,       REG_ID
+        ,       REG_DT
+        ,       UDT_ID
+        ,       UDT_DT
+        FROM POST_DETAIL
+        WHERE POST_ID = #{postId}
+    </select>
 </mapper>

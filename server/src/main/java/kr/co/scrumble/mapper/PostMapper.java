@@ -2,8 +2,11 @@ package kr.co.scrumble.mapper;
 
 import kr.co.scrumble.dto.model.PostDetailDto;
 import kr.co.scrumble.dto.model.PostDto;
+import kr.co.scrumble.dto.request.PostRequestDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Mapper
 @Repository
@@ -24,4 +27,8 @@ public interface PostMapper {
     int updatePostDetail(PostDetailDto postDetailDto);
 
     int deletePostDetail(Long detailId);
+
+    List<PostDto> selectPostPage(PostRequestDto postRequestDto);
+
+    List<PostDetailDto> selectPostDetailList(PostDto postDto);
 }
