@@ -1,9 +1,6 @@
 package kr.co.scrumble.config.auth;
 
-import kr.co.scrumble.config.auth.dto.OAuthAttributes;
-import kr.co.scrumble.config.auth.dto.SessionUser;
-import kr.co.scrumble.user.dto.model.UserDto;
-import kr.co.scrumble.user.mapper.UserMapper;
+import kr.co.scrumble.dto.model.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -16,13 +13,12 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
-    private final UserMapper userMapper;
+    private final UserRepository userRepository;
     private final HttpSession httpSession;
 
     @Override
@@ -47,15 +43,11 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
 
     private UserDto saveOrUpdate(OAuthAttributes attributes) {
-        UserDto userDto = userMapper.findByEmail(attributes.getEmail());
+        UserDto user = userRepository.findByEmail(attributes.getEmail())
+            .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
+            .orElse(attributes.toEntity());
 
-        if(userDto == null) {
-            userMapper.insertUser(attributes.toEntity());
-        } else {
-            userMapper.updateUser(attributes.toEntity());
-        }
-
-        return userDto;
+        return userRepository.save(user);
     }
 
 }

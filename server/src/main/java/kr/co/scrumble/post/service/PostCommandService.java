@@ -2,7 +2,8 @@ package kr.co.scrumble.post.service;
 
 import kr.co.scrumble.post.dto.model.PostDetailDto;
 import kr.co.scrumble.post.dto.request.PostRequestDto;
-import kr.co.scrumble.post.mapper.PostMapper;
+import kr.co.scrumble.post.dto.result.PostResultDto;
+import kr.co.scrumble.mapper.PostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

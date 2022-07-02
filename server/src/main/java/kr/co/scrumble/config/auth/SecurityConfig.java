@@ -1,6 +1,6 @@
 package kr.co.scrumble.config.auth;
 
-import kr.co.scrumble.user.dto.Enum.Role;
+import kr.co.scrumble.dto.Enum.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
