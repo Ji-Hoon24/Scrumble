@@ -33,8 +33,6 @@ public class MyBatisConfig {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(DataSource);
         sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources(mapperPath));
-        sqlSessionFactoryBean.setTypeAliasesPackage("kr.co.scrumble.dto.model");
-        sqlSessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml"));
         return sqlSessionFactoryBean.getObject();
     }
 
