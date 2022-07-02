@@ -1,4 +1,4 @@
-package kr.co.scrumble.post.dto.model;
+package kr.co.scrumble.dto.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -8,23 +8,21 @@ import org.apache.ibatis.type.Alias;
 import java.util.Date;
 
 @Data
-@Alias("postDetailDto")
-public class PostDetailDto {
-
-    @Schema(hidden = true)
-    private Long detailId;
+@Alias("postDto")
+public class PostDto {
 
     @Schema(hidden = true)
     private Long postId;
 
-    @Schema(description = "해당 게시글의 내용" , example = "테스트 내용1")
-    private String contents;
+    @Schema(description = "해당 게시글의 제목" , example = "테스트 데이터 입력")
+    private String title;
 
-    @Schema(description = "해당 내용 완료 여부" , example = "N")
-    private String completeYn;
+    @Schema(hidden = true)
+    private String userNo;
 
-    @Schema(description = "해당 게시글 구분 여부(TODO : 해야할 것 / DONE : 완료)" , example = "TODO")
-    private String postCd;
+    @Schema(description = "해당 게시글 일자" , example = "2022-05-15")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date postDt;
 
     @Schema(hidden = true)
     private String regId;

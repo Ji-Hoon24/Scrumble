@@ -1,7 +1,7 @@
-package kr.co.scrumble.post.dto.request;
+package kr.co.scrumble.dto.request;
 
-import kr.co.scrumble.post.dto.model.PostDetailDto;
-import kr.co.scrumble.post.dto.model.PostDto;
+import kr.co.scrumble.dto.model.PostDetailDto;
+import kr.co.scrumble.dto.model.PostDto;
 import lombok.Data;
 
 import java.util.List;

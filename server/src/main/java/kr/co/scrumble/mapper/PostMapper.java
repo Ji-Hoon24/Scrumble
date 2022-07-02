@@ -1,8 +1,8 @@
-package kr.co.scrumble.post.mapper;
+package kr.co.scrumble.mapper;
 
-import kr.co.scrumble.post.dto.model.PostDetailDto;
-import kr.co.scrumble.post.dto.model.PostDto;
-import kr.co.scrumble.post.dto.request.PostRequestDto;
+import kr.co.scrumble.dto.model.PostDetailDto;
+import kr.co.scrumble.dto.model.PostDto;
+import kr.co.scrumble.dto.request.PostRequestDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,9 @@
-package kr.co.scrumble.sample.controller;
+package kr.co.scrumble.controller;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import kr.co.scrumble.sample.service.SampleService;
+import kr.co.scrumble.service.SampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

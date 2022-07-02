@@ -17,7 +17,7 @@ import java.util.Set;
 @EnableWebMvc
 public class SwaggerConfig {
 
-    private ApiInfo scrumbleInfo() {
+    private ApiInfo swaggerInfo() {
         return new ApiInfoBuilder().title("Scrumble API")
             .description("Scrumble API Docs").build();
     }
@@ -27,8 +27,8 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
             .consumes(getConsumeContentTypes())
             .produces(getProduceContentTypes())
-            .apiInfo(scrumbleInfo()).select()
-            .apis(RequestHandlerSelectors.basePackage("kr.co.scrumble.*.controller"))
+            .apiInfo(swaggerInfo()).select()
+            .apis(RequestHandlerSelectors.basePackage("kr.co.scrumble.controller"))
             .paths(PathSelectors.any())
             .build()
             .useDefaultResponseMessages(false);
@@ -46,29 +46,4 @@ public class SwaggerConfig {
         produces.add("application/json;charset=UTF-8");
         return produces;
     }
-
-    @Bean
-    public Docket sampleApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-            .groupName("샘플")
-            .apiInfo(this.scrumbleInfo())
-            .select()
-            .apis(RequestHandlerSelectors
-                .basePackage("kr.co.scrumble.sample"))
-            .paths(PathSelectors.ant("/**"))
-            .build();
-    }
-
-    @Bean
-    public Docket postApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-            .groupName("게시글")
-            .apiInfo(this.scrumbleInfo())
-            .select()
-            .apis(RequestHandlerSelectors
-                .basePackage("kr.co.scrumble.post"))
-            .paths(PathSelectors.ant("/**"))
-            .build();
-    }
-
 }
