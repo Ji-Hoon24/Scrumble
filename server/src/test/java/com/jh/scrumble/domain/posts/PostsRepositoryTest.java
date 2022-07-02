@@ -1,5 +1,7 @@
 package com.jh.scrumble.domain.posts;
 
+import com.jh.scrumble.post.domain.Posts;
+import com.jh.scrumble.post.domain.PostsRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

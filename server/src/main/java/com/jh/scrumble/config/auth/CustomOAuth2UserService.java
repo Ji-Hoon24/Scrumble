@@ -2,8 +2,8 @@ package com.jh.scrumble.config.auth;
 
 import com.jh.scrumble.config.auth.dto.OAuthAttributes;
 import com.jh.scrumble.config.auth.dto.SessionUser;
-import com.jh.scrumble.domain.user.UserRepository;
-import com.jh.scrumble.domain.user.entity.User;
+import com.jh.scrumble.user.domain.UserRepository;
+import com.jh.scrumble.user.domain.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

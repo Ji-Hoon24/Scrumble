@@ -1,6 +1,6 @@
-package com.jh.scrumble.domain.user.entity;
+package com.jh.scrumble.user.domain.entity;
 
-import com.jh.scrumble.domain.common.BaseTimeEntity;
+import com.jh.scrumble.common.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

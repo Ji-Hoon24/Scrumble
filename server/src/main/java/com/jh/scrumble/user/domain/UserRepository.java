@@ -1,6 +1,6 @@
-package com.jh.scrumble.domain.user;
+package com.jh.scrumble.user.domain;
 
-import com.jh.scrumble.domain.user.entity.User;
+import com.jh.scrumble.user.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

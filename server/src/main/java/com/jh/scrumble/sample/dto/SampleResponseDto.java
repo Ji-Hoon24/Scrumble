@@ -1,4 +1,4 @@
-package com.jh.scrumble.dto;
+package com.jh.scrumble.sample.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

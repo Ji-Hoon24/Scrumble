@@ -1,4 +1,4 @@
-package com.jh.scrumble.domain.posts;
+package com.jh.scrumble.post.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

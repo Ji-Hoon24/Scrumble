@@ -1,10 +1,10 @@
 package com.jh.scrumble.controller.posts;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jh.scrumble.domain.posts.Posts;
-import com.jh.scrumble.domain.posts.dto.PostsSaveRequestDto;
-import com.jh.scrumble.domain.posts.PostsRepository;
-import com.jh.scrumble.domain.posts.dto.PostsUpdateRequestDto;
+import com.jh.scrumble.post.domain.Posts;
+import com.jh.scrumble.post.domain.dto.PostsSaveRequestDto;
+import com.jh.scrumble.post.domain.PostsRepository;
+import com.jh.scrumble.post.domain.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

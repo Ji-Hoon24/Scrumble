@@ -1,6 +1,6 @@
 package com.jh.scrumble.config.auth.dto;
 
-import com.jh.scrumble.domain.user.entity.User;
+import com.jh.scrumble.user.domain.entity.User;
 import lombok.Getter;
 
 import java.io.Serializable;

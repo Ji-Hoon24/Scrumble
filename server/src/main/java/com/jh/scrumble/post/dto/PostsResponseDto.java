@@ -1,6 +1,6 @@
-package com.jh.scrumble.dto;
+package com.jh.scrumble.post.dto;
 
-import com.jh.scrumble.domain.posts.Posts;
+import com.jh.scrumble.post.domain.Posts;
 import lombok.Getter;
 
 @Getter

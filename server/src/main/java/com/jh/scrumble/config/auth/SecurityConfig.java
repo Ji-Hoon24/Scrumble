@@ -1,6 +1,6 @@
 package com.jh.scrumble.config.auth;
 
-import com.jh.scrumble.domain.user.entity.Role;
+import com.jh.scrumble.user.domain.entity.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

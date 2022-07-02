@@ -1,6 +1,6 @@
-package com.jh.scrumble.controller;
+package com.jh.scrumble.sample.controller;
 
-import com.jh.scrumble.dto.SampleResponseDto;
+import com.jh.scrumble.sample.dto.SampleResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

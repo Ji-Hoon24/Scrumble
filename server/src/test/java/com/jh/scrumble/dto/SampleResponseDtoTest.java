@@ -1,5 +1,6 @@
 package com.jh.scrumble.dto;
 
+import com.jh.scrumble.sample.dto.SampleResponseDto;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 

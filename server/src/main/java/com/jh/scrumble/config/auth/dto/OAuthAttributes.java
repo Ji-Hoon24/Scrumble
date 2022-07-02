@@ -1,10 +1,9 @@
 package com.jh.scrumble.config.auth.dto;
 
-import com.jh.scrumble.domain.user.entity.Role;
-import com.jh.scrumble.domain.user.entity.User;
+import com.jh.scrumble.user.domain.entity.Role;
+import com.jh.scrumble.user.domain.entity.User;
 import lombok.Builder;
 import lombok.Getter;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Map;
 

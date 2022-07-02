@@ -1,9 +1,9 @@
-package com.jh.scrumble.controller.posts;
+package com.jh.scrumble.post.controller;
 
-import com.jh.scrumble.domain.posts.dto.PostsSaveRequestDto;
-import com.jh.scrumble.domain.posts.dto.PostsUpdateRequestDto;
-import com.jh.scrumble.dto.PostsResponseDto;
-import com.jh.scrumble.service.posts.PostsService;
+import com.jh.scrumble.post.domain.dto.PostsSaveRequestDto;
+import com.jh.scrumble.post.domain.dto.PostsUpdateRequestDto;
+import com.jh.scrumble.post.dto.PostsResponseDto;
+import com.jh.scrumble.post.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
