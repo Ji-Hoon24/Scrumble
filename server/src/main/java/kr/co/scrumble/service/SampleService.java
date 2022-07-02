@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class SampleService {
 
     @Autowired
-    SampleMapper sampleMapper;
+    SampleMapper sampleRepository;
 
     @Transactional
     public void SampleService() {
         System.out.println("Sample Service..");
-        System.out.println(sampleMapper.SampleSelect().get(0));
+        System.out.println(sampleRepository.SampleSelect().get(0));
     }
 }
