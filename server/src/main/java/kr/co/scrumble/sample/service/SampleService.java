@@ -1,6 +1,6 @@
-package kr.co.scrumble.service;
+package kr.co.scrumble.sample.service;
 
-import kr.co.scrumble.mapper.SampleMapper;
+import kr.co.scrumble.sample.mapper.SampleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

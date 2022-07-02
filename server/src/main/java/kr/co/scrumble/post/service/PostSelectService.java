@@ -1,5 +1,7 @@
-package kr.co.scrumble.service.post;
+package kr.co.scrumble.post.service;
 
+import kr.co.scrumble.post.dto.model.PostDto;
+import kr.co.scrumble.post.mapper.PostMapper;
 import kr.co.scrumble.dto.model.PostDetailDto;
 import kr.co.scrumble.dto.model.PostDto;
 import kr.co.scrumble.dto.request.PostRequestDto;

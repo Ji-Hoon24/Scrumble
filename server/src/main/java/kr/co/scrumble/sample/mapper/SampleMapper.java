@@ -1,4 +1,4 @@
-package kr.co.scrumble.mapper;
+package kr.co.scrumble.sample.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;

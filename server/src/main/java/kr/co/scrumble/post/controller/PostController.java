@@ -1,14 +1,14 @@
-package kr.co.scrumble.controller;
+package kr.co.scrumble.post.controller;
 
 import io.swagger.annotations.*;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
-import kr.co.scrumble.dto.model.PostDetailDto;
-import kr.co.scrumble.dto.model.PostDto;
-import kr.co.scrumble.dto.request.PostRequestDto;
-import kr.co.scrumble.dto.result.PostResultDto;
-import kr.co.scrumble.service.post.PostCommandService;
-import kr.co.scrumble.service.post.PostSelectService;
+import kr.co.scrumble.post.dto.model.PostDetailDto;
+import kr.co.scrumble.post.dto.model.PostDto;
+import kr.co.scrumble.post.dto.request.PostRequestDto;
+import kr.co.scrumble.post.dto.result.PostResultDto;
+import kr.co.scrumble.post.service.PostCommandService;
+import kr.co.scrumble.post.service.PostSelectService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
