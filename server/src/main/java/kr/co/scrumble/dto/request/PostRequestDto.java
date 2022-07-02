@@ -12,8 +12,4 @@ public class PostRequestDto {
     private PostDto postDto;
 
     private List<PostDetailDto> postDetailDtoList;
-
-    private String userNo;
-
-    private Long page;
 }
