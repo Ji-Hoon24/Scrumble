@@ -1,4 +1,4 @@
-package kr.co.scrumble.dto.Enum;
+package kr.co.scrumble.user.dto.Enum;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
