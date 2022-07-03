@@ -1,29 +1,25 @@
 package com.jh.scrumble.post.dto.request;
 
+import com.jh.scrumble.post.dto.entity.PostDetail;
 import com.jh.scrumble.post.dto.entity.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Getter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
-    private String title;
-    private String content;
-    private String author;
+
+    private Posts posts;
+
+    private List<PostDetail> postDetailList;
 
     @Builder
-    public PostsSaveRequestDto(String title, String content, String author) {
-        this.title = title;
-        this.content = content;
-        this.author = author;
+    public PostsSaveRequestDto(Posts posts, List<PostDetail> postDetailList) {
+        this.posts = posts;
+        this.postDetailList = postDetailList;
     }
 
-    public Posts toEntity() {
-        return Posts.builder()
-            .title(title)
-            .content(content)
-            .author(author)
-            .build();
-    }
 }

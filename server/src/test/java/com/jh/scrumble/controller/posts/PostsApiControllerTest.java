@@ -20,6 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -62,7 +63,9 @@ public class PostsApiControllerTest {
     public void Posts_save() throws Exception {
         String title = "title";
         String content = "content";
-        PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder().title(title).content(content).author("ohjihoon24@gmail.com").build();
+        String author = "ohjihoon24@gmail.com";
+        Posts posts = new Posts(title, author, new Date());
+        PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder().posts(posts).build();
 
         String url = "http://localhost:" + port + "/api/posts/";
 
@@ -72,13 +75,13 @@ public class PostsApiControllerTest {
 
         List<Posts> list = postsRepository.findAll();
         assertThat(list.get(0).getTitle()).isEqualTo(title);
-        assertThat(list.get(0).getContent()).isEqualTo(content);
+        //assertThat(list.get(0).getContent()).isEqualTo(content);
     }
 
     @Test
     @WithMockUser(roles="USER")
     public void Posts_update() throws Exception {
-        Posts savedPosts = postsRepository.save(Posts.builder().title("title").content("content").author("author").build());
+        Posts savedPosts = postsRepository.save(Posts.builder().title("title").author("author").build());
 
         Long updateId = savedPosts.getId();
         String expectedTitle = "title2";
@@ -94,6 +97,6 @@ public class PostsApiControllerTest {
 
         List<Posts> all = postsRepository.findAll();
         assertThat(all.get(0).getTitle()).isEqualTo(expectedTitle);
-        assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
+//        assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
     }
 }

@@ -1,5 +1,6 @@
 package com.jh.scrumble.common.domain;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -14,9 +15,11 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseTimeEntity {
 
+    @Schema(hidden = true)
     @CreatedDate
     private LocalDateTime createdDate;
 
+    @Schema(hidden = true)
     @LastModifiedDate
     private LocalDateTime modifiedDate;
 
