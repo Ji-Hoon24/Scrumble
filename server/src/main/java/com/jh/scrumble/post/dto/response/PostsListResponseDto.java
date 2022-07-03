@@ -1,6 +1,6 @@
-package com.jh.scrumble.post.dto;
+package com.jh.scrumble.post.dto.response;
 
-import com.jh.scrumble.post.domain.Posts;
+import com.jh.scrumble.post.dto.entity.Posts;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

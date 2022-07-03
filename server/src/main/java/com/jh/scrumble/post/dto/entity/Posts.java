@@ -1,4 +1,4 @@
-package com.jh.scrumble.post.domain;
+package com.jh.scrumble.post.dto.entity;
 
 import com.jh.scrumble.common.domain.BaseTimeEntity;
 import lombok.Builder;

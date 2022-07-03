@@ -1,11 +1,11 @@
 package com.jh.scrumble.post.service;
 
-import com.jh.scrumble.post.domain.dto.PostsSaveRequestDto;
-import com.jh.scrumble.post.domain.dto.PostsUpdateRequestDto;
-import com.jh.scrumble.post.domain.Posts;
+import com.jh.scrumble.post.dto.request.PostsSaveRequestDto;
+import com.jh.scrumble.post.dto.request.PostsUpdateRequestDto;
+import com.jh.scrumble.post.dto.entity.Posts;
 import com.jh.scrumble.post.domain.PostsRepository;
-import com.jh.scrumble.post.dto.PostsListResponseDto;
-import com.jh.scrumble.post.dto.PostsResponseDto;
+import com.jh.scrumble.post.dto.response.PostsListResponseDto;
+import com.jh.scrumble.post.dto.response.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

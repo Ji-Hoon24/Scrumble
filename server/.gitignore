@@ -6,3 +6,4 @@ application-real-oauth.properties
 
 build
 out
+logs

@@ -1,4 +1,4 @@
-package com.jh.scrumble.post.domain.dto;
+package com.jh.scrumble.post.dto.request;
 
 import lombok.Builder;
 import lombok.Getter;

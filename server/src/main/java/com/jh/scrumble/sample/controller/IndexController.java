@@ -2,7 +2,7 @@ package com.jh.scrumble.sample.controller;
 
 import com.jh.scrumble.config.auth.LoginUser;
 import com.jh.scrumble.config.auth.dto.SessionUser;
-import com.jh.scrumble.post.dto.PostsResponseDto;
+import com.jh.scrumble.post.dto.response.PostsResponseDto;
 import com.jh.scrumble.post.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

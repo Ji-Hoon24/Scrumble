@@ -14,9 +14,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().headers().frameOptions().disable().and().authorizeRequests()
-            .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll()
-            .antMatchers("/api/**").hasRole(Role.USER.name()).anyRequest().authenticated()
-            .and().logout().logoutSuccessUrl("/").and().oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);
+        http.csrf().disable().headers().frameOptions().disable();
+        http.authorizeRequests().antMatchers("/css/**").permitAll();
+        http.authorizeRequests().antMatchers("/images/**").permitAll();
+        http.authorizeRequests().antMatchers("/js/**").permitAll();
+        http.authorizeRequests().antMatchers("/h2-console/**").permitAll();
+        http.authorizeRequests().antMatchers("/swagger").permitAll();
+        http.authorizeRequests().antMatchers("/swagger-ui/index.html").permitAll();
+        http.authorizeRequests().antMatchers("/swagger-ui/**").permitAll();
+        http.authorizeRequests().antMatchers("/swagger-ui**").permitAll();
+//        http.authorizeRequests().antMatchers("/**").hasRole(Role.USER.name()).anyRequest().authenticated();
+        http.logout().logoutSuccessUrl("/").and().oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);
     }
 }

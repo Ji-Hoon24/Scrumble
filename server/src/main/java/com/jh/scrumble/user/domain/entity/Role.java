@@ -1,6 +1,5 @@
 package com.jh.scrumble.user.domain.entity;
 
-import javafx.beans.property.adapter.JavaBeanBooleanPropertyBuilder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

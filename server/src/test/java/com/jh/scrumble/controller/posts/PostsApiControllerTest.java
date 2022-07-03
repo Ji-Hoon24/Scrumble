@@ -1,13 +1,13 @@
 package com.jh.scrumble.controller.posts;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jh.scrumble.post.domain.Posts;
-import com.jh.scrumble.post.domain.dto.PostsSaveRequestDto;
+import com.jh.scrumble.post.dto.entity.Posts;
+import com.jh.scrumble.post.dto.request.PostsSaveRequestDto;
 import com.jh.scrumble.post.domain.PostsRepository;
-import com.jh.scrumble.post.domain.dto.PostsUpdateRequestDto;
+import com.jh.scrumble.post.dto.request.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

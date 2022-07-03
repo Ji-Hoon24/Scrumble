@@ -1,5 +1,6 @@
 package com.jh.scrumble.post.domain;
 
+import com.jh.scrumble.post.dto.entity.Posts;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

@@ -1,6 +1,6 @@
-package com.jh.scrumble.post.domain.dto;
+package com.jh.scrumble.post.dto.request;
 
-import com.jh.scrumble.post.domain.Posts;
+import com.jh.scrumble.post.dto.entity.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
