@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -17,10 +18,11 @@ public class PostDetail extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(hidden = true)
+    @Schema(description = "해당 게시글의 순서 번호")
     private Long detailId;
 
-    @Schema(hidden = true)
+    @Setter
+    @Schema(description = "해당 게시글의 번호")
     private Long id;
 
     @Column(length = 500, nullable = false)
@@ -41,8 +43,4 @@ public class PostDetail extends BaseTimeEntity {
         this.postCd = postCd;
     }
 
-    public PostDetail setId(Long id) {
-        this.id = id;
-        return this;
-    }
 }

@@ -17,7 +17,7 @@ public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(hidden = true)
+    @Schema(description = "해당 게시글의 번호")
     private Long id;
 
     @Column(length = 500, nullable = false)

@@ -30,14 +30,14 @@ public class PostsService {
             postDetailRepository.save(postDetail);
         }
 
-        return postsRepository.save(requestDto.getPosts()).getId();
+        return postId;
     }
 
     @Transactional
     public Long update(Long id, PostsUpdateRequestDto requestDto) {
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
-
-        posts.update(requestDto.getTitle(), new Date());
+        postsRepository.save(requestDto.getPosts());
+        postDetailRepository.saveAll(requestDto.getPostDetailList());
 
         return id;
     }
