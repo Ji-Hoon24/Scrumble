@@ -1,18 +1,21 @@
 package com.jh.scrumble.post.dto.response;
 
+import com.jh.scrumble.post.dto.entity.PostDetail;
 import com.jh.scrumble.post.dto.entity.Posts;
 import lombok.Getter;
+
+import java.util.List;
 
 @Getter
 public class PostsResponseDto {
 
-    private Long id;
-    private String title;
-    private String author;
+    private Posts posts;
 
-    public PostsResponseDto(Posts entity) {
-        this.id = entity.getId();
-        this.title = entity.getTitle();
-        this.author = entity.getAuthor();
+    private List<PostDetail> postDetailList;
+
+    public PostsResponseDto(Posts posts, List<PostDetail> postDetailList) {
+        this.posts = posts;
+        this.postDetailList = postDetailList;
     }
+
 }
