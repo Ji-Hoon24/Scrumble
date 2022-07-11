@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,14 +50,20 @@ public class PostsService {
     }
 
     @Transactional
-    public List<PostsListResponseDto> findAllDesc() {
-        return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
-    }
-
-    @Transactional
     public void delete(Long id) {
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
         postDetailRepository.deleteAllById(id);
         postsRepository.delete(posts);
+    }
+
+    public List<PostsResponseDto> postsList(Long page) {
+        List<PostsResponseDto> result = new ArrayList<PostsResponseDto>();
+        List<Posts> postsList = postsRepository.findTop10ByPage(page);
+        for(Posts posts : postsList) {
+            List<PostDetail> postDetailList = postDetailRepository.findAllById(posts.getId());
+            PostsResponseDto dto = new PostsResponseDto(posts, postDetailList);
+            result.add(dto);
+        }
+        return result;
     }
 }

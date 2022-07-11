@@ -2,10 +2,13 @@ package com.jh.scrumble.post.controller;
 
 import com.jh.scrumble.post.dto.request.PostsSaveRequestDto;
 import com.jh.scrumble.post.dto.request.PostsUpdateRequestDto;
+import com.jh.scrumble.post.dto.response.PostsListResponseDto;
 import com.jh.scrumble.post.dto.response.PostsResponseDto;
 import com.jh.scrumble.post.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RequestMapping("/api/posts")
@@ -33,6 +36,12 @@ public class PostsApiController {
     public Long delete(@PathVariable Long id) {
         postsService.delete(id);
         return id;
+    }
+
+    @GetMapping("/list/{page}")
+    public List<PostsResponseDto> postsList(@PathVariable Long page) {
+        List<PostsResponseDto> list = postsService.postsList(page);
+        return list;
     }
 
 }
