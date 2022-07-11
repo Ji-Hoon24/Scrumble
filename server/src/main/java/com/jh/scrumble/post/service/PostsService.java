@@ -6,16 +6,13 @@ import com.jh.scrumble.post.dto.request.PostsSaveRequestDto;
 import com.jh.scrumble.post.dto.request.PostsUpdateRequestDto;
 import com.jh.scrumble.post.dto.entity.Posts;
 import com.jh.scrumble.post.domain.PostsRepository;
-import com.jh.scrumble.post.dto.response.PostsListResponseDto;
 import com.jh.scrumble.post.dto.response.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service

@@ -2,7 +2,6 @@ package com.jh.scrumble.post.controller;
 
 import com.jh.scrumble.post.dto.request.PostsSaveRequestDto;
 import com.jh.scrumble.post.dto.request.PostsUpdateRequestDto;
-import com.jh.scrumble.post.dto.response.PostsListResponseDto;
 import com.jh.scrumble.post.dto.response.PostsResponseDto;
 import com.jh.scrumble.post.service.PostsService;
 import lombok.RequiredArgsConstructor;
