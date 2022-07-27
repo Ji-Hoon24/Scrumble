@@ -2,6 +2,7 @@
 .idea
 
 application-oauth.properties
+application-jwt.properties
 application-real-oauth.properties
 
 build

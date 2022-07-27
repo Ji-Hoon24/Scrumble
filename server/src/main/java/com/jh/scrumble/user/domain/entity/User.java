@@ -29,12 +29,24 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private Role role;
 
+    @Column(length = 1000)
+    private String refreshToken;//RefreshToken
+
     @Builder
-    public User(String name, String email, String picture, Role role) {
+    public User(String name, String email, String picture, Role role, String refreshToken) {
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
+        this.refreshToken = refreshToken;
+    }
+
+    public void updateRefreshToken(String refreshToken){
+        this.refreshToken = refreshToken;
+    }
+
+    public void destroyRefreshToken(){
+        this.refreshToken = null;
     }
 
     public User update(String name, String picture) {
@@ -47,4 +59,5 @@ public class User extends BaseTimeEntity {
     public String getRoleKey() {
         return this.role.getKey();
     }
+
 }

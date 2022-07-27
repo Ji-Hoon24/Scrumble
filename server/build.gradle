@@ -37,6 +37,7 @@ dependencies {
     implementation 'org.springframework.session:spring-session-jdbc'
     implementation 'org.springframework.security:spring-security-test'
     implementation 'junit:junit:4.13.2'
+    implementation 'com.auth0:java-jwt:3.19.2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

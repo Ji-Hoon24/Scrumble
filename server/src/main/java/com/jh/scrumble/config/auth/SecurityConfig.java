@@ -18,11 +18,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/css/**").permitAll();
         http.authorizeRequests().antMatchers("/images/**").permitAll();
         http.authorizeRequests().antMatchers("/js/**").permitAll();
+        http.authorizeRequests().antMatchers("/h2/**").permitAll();
         http.authorizeRequests().antMatchers("/h2-console/**").permitAll();
         http.authorizeRequests().antMatchers("/swagger").permitAll();
         http.authorizeRequests().antMatchers("/swagger-ui/index.html").permitAll();
         http.authorizeRequests().antMatchers("/swagger-ui/**").permitAll();
         http.authorizeRequests().antMatchers("/swagger-ui**").permitAll();
+        http.authorizeRequests().antMatchers("/api/v2/api-docs").permitAll();
+        http.authorizeRequests().antMatchers("/swagger-resources/**").permitAll();
+        http.authorizeRequests().antMatchers("/v2/api-docs").permitAll();
 //        http.authorizeRequests().antMatchers("/api/**").hasAnyAuthority(Role.USER.name());
 //        http.authorizeRequests().antMatchers("/api/**").hasRole(Role.USER.name()).anyRequest().authenticated();
         http.logout().logoutSuccessUrl("/").and().oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);
