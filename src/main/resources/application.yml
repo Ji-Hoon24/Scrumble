@@ -35,4 +35,4 @@ jwt:
         token-validity-in-seconds: 360000 #1시간 60 * 60 * 1000
     refresh:
         header: Authorization-refresh
-        token-validity-in-seconds: 43200 #5일 60 * 60 * 24 * 5
+        token-validity-in-seconds: 43200000 #5일 60 * 60 * 24 * 5 * 1000
