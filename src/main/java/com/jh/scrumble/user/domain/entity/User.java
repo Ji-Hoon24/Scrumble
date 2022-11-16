@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @NoArgsConstructor
@@ -23,30 +24,20 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private String email;
 
-    @Column
-    private String picture;
+    @Column(name = "password", length = 100)
+    private String password;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Role role;
+    @Column(name = "nickname", length = 50)
+    private String nickname;
 
-    @Builder
-    public User(String name, String email, String picture, Role role) {
-        this.name = name;
-        this.email = email;
-        this.picture = picture;
-        this.role = role;
-    }
+    @Column(name = "activated")
+    private boolean activated;
 
-    public User update(String name, String picture) {
-        this.name = name;
-        this.picture = picture;
-
-        return this;
-    }
-
-    public String getRoleKey() {
-        return this.role.getKey();
-    }
+    @ManyToMany
+    @JoinTable(
+        name = "user_authority",
+        joinColumns = {@JoinColumn(name = "id", referencedColumnName = "id")},
+        inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")})
+    private Set<Authority> authorities;
 
 }

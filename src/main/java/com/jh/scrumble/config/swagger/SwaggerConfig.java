@@ -24,7 +24,7 @@ public class SwaggerConfig {
 
     @Bean
     public Docket swaggerApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.OAS_30)
             .consumes(getConsumeContentTypes())
             .produces(getProduceContentTypes())
             .apiInfo(scrumbleInfo()).select()
@@ -49,24 +49,36 @@ public class SwaggerConfig {
 
     @Bean
     public Docket sampleApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.OAS_30)
             .groupName("샘플")
             .apiInfo(this.scrumbleInfo())
             .select()
             .apis(RequestHandlerSelectors
-                .basePackage("com.jh-.scrumble.sample"))
+                .basePackage("com.jh.scrumble.sample"))
             .paths(PathSelectors.ant("/**"))
             .build();
     }
 
     @Bean
     public Docket postApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.OAS_30)
             .groupName("게시글")
             .apiInfo(this.scrumbleInfo())
             .select()
             .apis(RequestHandlerSelectors
                 .basePackage("com.jh.scrumble.post"))
+            .paths(PathSelectors.ant("/**"))
+            .build();
+    }
+
+    @Bean
+    public Docket userApi() {
+        return new Docket(DocumentationType.OAS_30)
+            .groupName("유저정보")
+            .apiInfo(this.scrumbleInfo())
+            .select()
+            .apis(RequestHandlerSelectors
+                .basePackage("com.jh.scrumble.user"))
             .paths(PathSelectors.ant("/**"))
             .build();
     }
