@@ -93,6 +93,8 @@ public class TokenProvider implements InitializingBean {
 
       User principal = new User(claims.getSubject(), "", authorities);
 
+      System.out.println(principal);
+
       return new UsernamePasswordAuthenticationToken(principal, token, authorities);
    }
 

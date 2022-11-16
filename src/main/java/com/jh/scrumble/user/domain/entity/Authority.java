@@ -1,5 +1,6 @@
 package com.jh.scrumble.user.domain.entity;
 
+import com.jh.scrumble.common.domain.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Authority {
+public class Authority extends BaseTimeEntity {
 
    @Id
    @Column(name = "authority_name", length = 50)

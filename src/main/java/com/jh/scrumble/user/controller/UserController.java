@@ -1,12 +1,11 @@
 package com.jh.scrumble.user.controller;
 
+import com.jh.scrumble.config.ApiResultUtil.ApiResult;
 import com.jh.scrumble.dto.TokenDto;
 import com.jh.scrumble.jwt.JwtFilter;
 import com.jh.scrumble.jwt.TokenProvider;
 import com.jh.scrumble.user.dto.request.LoginDto;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
@@ -17,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+
+import static com.jh.scrumble.config.ApiResultUtil.success;
 
 @RestController
 @RequestMapping("/api")
@@ -30,7 +31,7 @@ public class UserController {
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<TokenDto> authorize(@Valid @RequestBody LoginDto loginDto) {
+    public ApiResult<TokenDto> authorize(@Valid @RequestBody LoginDto loginDto) {
 
         UsernamePasswordAuthenticationToken authenticationToken =
             new UsernamePasswordAuthenticationToken(loginDto.getEmail(), loginDto.getPassword());
@@ -40,11 +41,6 @@ public class UserController {
         String accessToken = tokenProvider.createAccessToken(authentication);
         String refreshToken = tokenProvider.createRefreshToken(authentication);
 
-
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add(JwtFilter.AUTHORIZATION_HEADER, "Bearer " + accessToken);
-        httpHeaders.add(JwtFilter.AUTHORIZATION_REFRESH_HEADER, "Bearer " + refreshToken);
-
-        return new ResponseEntity<>(new TokenDto(accessToken, refreshToken), httpHeaders, HttpStatus.OK);
+        return success(new TokenDto(accessToken, refreshToken));
     }
 }
